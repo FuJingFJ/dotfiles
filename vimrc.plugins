@@ -1,0 +1,105 @@
+source $VIMRUNTIME/ftplugin/man.vim
+
+" ---------------------------------------------------
+Plugin 'VundleVim/Vundle.Vim'
+
+" ---------------------------------------------------
+Plugin 'majutsushi/tagbar'
+let g:tagbar_left=0
+let g:tagbar_width=30
+let g:tagbar_autofocus = 1
+nmap <leader>tb :TagbarToggle<CR>
+
+" ---------------------------------------------------
+" vim-color-solarized
+Plugin 'altercation/vim-colors-solarized'
+if !has('gui_running')
+    set t_Co=256 " make sure our terminal use 256 color
+    let g:solarized_termcolors = 256
+endif
+
+
+" ---------------------------------------------------
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+nmap <F3> :NERDTreeToggle<CR>
+let NERDTreeWinSize=32
+let NERDTreeWinPos="left"
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=0
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let NERDTreeShowBookmarks=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeIgnore=['\~$[[file]]', '\.pyc$[[file]]', '\.swp$[[file]]', '^cscope\.\([a-z]\+\.\)\?out$[[file]]', '^cscope.tool$[[file]]']
+
+
+" ---------------------------------------------------
+" minibufexpl
+Plugin 'rexsi/minibufexpl.vim'
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+nnoremap [b :MBEbp <CR>
+nnoremap ]b :MBEbn <CR>
+
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'gko/vim-coloresque'
+
+" ---------------------------------------------------
+" vim-signature
+Plugin 'kshenoy/vim-signature'
+
+" ---------------------------------------------------
+" ctrlp: invoke by <ctrl-p>
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_follow_symlinks = 2
+nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
+
+" " ---------------------------------------------------
+Plugin 'dyng/ctrlsf.vim'
+let g:ctrlsf_ackprg = 'ag'
+let g:ctrlsf_position = 'left'
+let g:ctrlsf_winsize = '40%'
+let g:ctrlsf_context = '-B 5 -A 3'
+let g:ctrlsf_auto_close = 0
+nnoremap <Leader>ag :CtrlSF <C-r><C-w><CR>
+
+" LargeFile
+" ---------------------------------------------------
+Plugin 'vim-scripts/LargeFile'
+let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
+
+" ---------------------------------------------------
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'tpope/vim-endwise'
+
+" ---------------------------------------------------
+Plugin 'Yggdroot/indentLine'
+
+" ---------------------------------------------------
+"Plugin 'SirVer/ultisnips'  "replace with the following three plugins
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+Plugin 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsEditSplit="vertical"
+
+" ---------------------------------------------------
+Plugin 'tpope/vim-fugitive'
+
+" ---------------------------------------------------
+Plugin 'bling/vim-airline'
+
+Plugin 'digitaltoad/vim-pug'
+Plugin 'posva/vim-vue'
+autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
